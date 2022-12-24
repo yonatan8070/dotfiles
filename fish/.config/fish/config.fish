@@ -18,6 +18,7 @@ alias hx="helix"
 
 set fish_greeting (set_color C41202 --bold)">"(set_color normal) Welcome, operator. Using (fish --version | sed 's/, version//'). Good luck.
 
+alias dcr="docker compose down && docker-compose up -d"
 alias miniterm="python3 -m serial.tools.miniterm -e"
 alias rm="rm -v"
 alias ls="exa"

@@ -13,6 +13,9 @@ cursorline = true
 # render = true
 # character = "▏" # \u001b[38;2;47;55;59m
 
+[keys.normal]
+"esc" = ["keep_primary_selection", "collapse_selection"]
+
 [editor.lsp]
 display-messages = true
 

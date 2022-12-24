@@ -1,0 +1,26 @@
+theme = "my-ayu_dark"
+
+[editor]
+line-number = "relative"
+mouse = true
+auto-format = true
+rulers = [120]
+bufferline = "multiple"
+auto-save = true
+cursorline = true
+
+# [editor.indent-guides]
+# render = true
+# character = "▏" # \u001b[38;2;47;55;59m
+
+[editor.lsp]
+display-messages = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+

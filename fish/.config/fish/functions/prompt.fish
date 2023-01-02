@@ -7,12 +7,12 @@ function fish_prompt
 
         # Show duration of the last command in seconds
         set duration (echo "$CMD_DURATION 1000" | awk '{printf "%.3f", $1 / $2}')
-        echo -se "Command " (set_color brblue) $history[1] (set_color normal) \
+        echo -se "Command " (set_color brblue) $(echo $history[1] | cut -d " " -f1) (set_color normal) \
                  " finished in " (set_color brgreen) $duration (set_color normal) "s"
 
         # Send a notification if the command took longer than 30 seconds in case I'm looking at something else
         if test $CMD_DURATION -gt 30000
-            notify-send -u normal -a "Fish" "Command $(echo history[1] | cut -d " " -f1) finished in $(echo $duration)s"
+            notify-send -u normal -a "Fish" "Command $(echo $history[1] | cut -d " " -f1) finished in $(echo $duration)s"
         end
     end
 

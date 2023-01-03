@@ -1,5 +1,5 @@
 function fish_prompt
-    set exclude_cmd "bash|less|man|more|ssh|bat|helix|vim|hx"
+    set exclude_cmd "bash|less|man|more|ssh|bat|helix|vim|hx|btop"
     if begin
         test $CMD_DURATION -gt 1000
         and echo $history[1] | grep -vqE "^($exclude_cmd).*"

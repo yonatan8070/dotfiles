@@ -1,3 +1,9 @@
 inherits = "ayu_dark"
 
-"diagnostic.error" = { fg = "errorfg", bg = "errorbg", underline = { style = "curl", color = "red" } }
+# "diagnostic.error" = { fg = "errorfg", bg = "errorbg", underline = { style = "curl", color = "red" } }
+
+"ui.cursor" = {bg = "#ffffff"}
+"ui.cursor.insert" = {bg = "#ffffff"}
+"ui.cursor.select" = {bg = "#ffffff"}
+
+"ui.virtual.indent-guide" = "#f0f0f0"

@@ -19,4 +19,8 @@ function fish_prompt
     # Print the rest of the prompt
     printf '%s%s%s@%s %s%s%s%s > \n' (set_color $fish_color_user) $USER (set_color normal) $hostname \
         (set_color $fish_color_cwd) (prompt_pwd) (set_color normal) (fish_git_prompt)
+
+    if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)";
+        history delete --exact --case-sensitive $history[1]
+    end
 end

@@ -30,4 +30,3 @@ alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
 
 . "/home/$USER/.config/fish/functions/prompt.fish"
-. "/home/$USER/.config/fish/functions/mkcd.fish"

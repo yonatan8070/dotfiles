@@ -18,6 +18,11 @@ character = "▏"
 
 [keys.normal]
 "esc" = ["keep_primary_selection", "collapse_selection"]
+X = "extend_line_above"
+a = ["move_char_right", "insert_mode"]
+
+[keys.normal.space]
+G = ":pipe google"
 
 [editor.lsp]
 display-messages = true

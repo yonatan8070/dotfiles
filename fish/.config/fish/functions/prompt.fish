@@ -12,7 +12,9 @@ function fish_prompt
 
         # Send a notification if the command took longer than 30 seconds in case I'm looking at something else
         if test $CMD_DURATION -gt 30000
-            notify-send -u normal -a "Fish" "Command $(echo $history[1] | cut -d " " -f1) finished in $(echo $duration)s"
+            if type -q notify-send
+                notify-send -u normal -a "Fish" "Command $(echo $history[1] | cut -d " " -f1) finished in $(echo $duration)s"
+            end
         end
     end
 

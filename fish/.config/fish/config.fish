@@ -8,10 +8,10 @@ end
 set -x LC_ALL "en_US.UTF-8"
 
 # Make bat colorize man pages
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 # Allow less to show stuff like archives
-set -x LESSOPEN "|lesspipe.sh %s"
+# set -x LESSOPEN "|lesspipe.sh %s"
 
 set -x EDITOR helix
 alias hx="helix"

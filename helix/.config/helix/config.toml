@@ -1,9 +1,9 @@
-theme = "tokyonight"
+theme = "ayu_dark"
 
 [editor]
 line-number = "relative"
 mouse = true
-auto-format = true
+auto-format = false
 rulers = [120]
 bufferline = "multiple"
 auto-save = true

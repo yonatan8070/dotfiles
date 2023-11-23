@@ -2,3 +2,6 @@
 name = "c"
 indent = { tab-width = 4, unit = "    " }
 # formatter = { command = "clang-format",  }
+
+[language-server.clangd]
+args = ["-header-insertion=never"]

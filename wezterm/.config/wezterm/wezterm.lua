@@ -4,6 +4,11 @@ local mux = wezterm.mux
 local config = wezterm.config_builder()
 
 config.color_scheme = 'Abernathy'
+
+config.inactive_pane_hsb = {
+  saturation = 0.5,
+  brightness = 0.6,
+}
 config.font = wezterm.font('JetBrains Mono', { weight = 'Regular', italic = false })
 config.font_size = 13.0
 

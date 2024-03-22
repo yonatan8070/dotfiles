@@ -19,7 +19,7 @@ function fish_prompt
     end
 
     if test "$LAST_PWD" != "$PWD"
-        set PROMPT_PWD (prompt_pwd)
+        set PROMPT_PWD (prompt_pwd --full-length-dirs 100)
         set -g LAST_PWD "$PWD"
     else
         set PROMPT_PWD (echo -en "\b")

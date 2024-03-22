@@ -31,3 +31,9 @@ alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
 
 . "/home/$USER/.config/fish/functions/prompt.fish"
+
+# Created by `pipx` on 2024-03-22 15:06:37
+if type -q pipx
+    set PATH $PATH /home/yonatan/.local/bin
+end
+

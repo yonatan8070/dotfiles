@@ -18,16 +18,10 @@ function fish_prompt
         end
     end
 
-    if test "$LAST_PWD" != "$PWD"
-        set PROMPT_PWD (prompt_pwd --full-length-dirs 100)
-        set -g LAST_PWD "$PWD"
-    else
-        set PROMPT_PWD (echo -en "\b")
-    end
+    set PROMPT_PWD (set_color red)"["(set_color normal)(prompt_pwd --full-length-dirs 100)(set_color red)"]"(set_color normal)
     
     # Print the rest of the prompt
-    printf '%s%s%s@%s %s%s%s%s > \n' (set_color $fish_color_user) $USER (set_color normal) $hostname \
-        (set_color $fish_color_cwd) "$PROMPT_PWD" (set_color normal) (fish_git_prompt)
+    printf '%s\n%s%s%s@%s%s%s%s > \n' "$PROMPT_PWD" (set_color $fish_color_user) $USER (set_color normal) $hostname (fish_git_prompt)
 
     if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)|(^clear)";
         history delete --exact --case-sensitive $history[1]

@@ -5,3 +5,7 @@ indent = { tab-width = 4, unit = "    " }
 
 [language-server.clangd]
 args = ["-header-insertion=never"]
+
+[[language]]
+name = "go"
+indent = { tab-width = 4, unit = "    " }

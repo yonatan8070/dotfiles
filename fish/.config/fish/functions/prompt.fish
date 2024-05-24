@@ -26,4 +26,6 @@ function fish_prompt
     if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)|(^clear)";
         history delete --exact --case-sensitive $history[1]
     end
+
+    set -U fish_history_merge_variable (math $fish_history_merge_variable + 1)
 end

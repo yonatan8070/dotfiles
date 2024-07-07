@@ -9,3 +9,7 @@ args = ["-header-insertion=never"]
 [[language]]
 name = "go"
 indent = { tab-width = 4, unit = "    " }
+
+[language-server.pylsp]
+config = { pylsp.plugins.flake8.maxLineLength = 120, pylsp.plugins.pycodestyle.maxLineLength = 120  }
+

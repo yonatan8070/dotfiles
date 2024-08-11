@@ -1,5 +1,5 @@
 function merge_history --on-variable fish_history_merge_variable
-    history merge
+    # history merge
 end
 
 
@@ -43,8 +43,5 @@ alias uuuu="cd ../../../.."
 
 . "$HOME/.config/fish/functions/prompt.fish"
 
-# Created by `pipx` on 2024-03-22 15:06:37
-if type -q pipx
-    set PATH $PATH /home/yonatan/.local/bin
-end
+set PATH $PATH /home/yonatan/.local/bin
 

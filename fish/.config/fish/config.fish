@@ -45,3 +45,6 @@ alias uuuu="cd ../../../.."
 
 set PATH $PATH /home/yonatan/.local/bin
 
+if command -q zoxide
+    zoxide init fish --cmd cd | source
+end

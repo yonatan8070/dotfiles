@@ -7,6 +7,10 @@ eDP-1 Window-Maximized 1920x1080 eDP-1=true
 [Desktop Entry]
 DefaultProfile=Main.profile
 
+[FileDialogSize]
+3 screens: Height=480
+3 screens: Width=800
+
 [General]
 ConfigVersion=1
 
@@ -59,7 +63,11 @@ eDP-1 Width 1920x1080 eDP-1=960
 eDP-1 Window-Maximized 1920x1080=true
 eDP-1 Window-Maximized 1920x1080 eDP-1=true
 
+[SplitView]
+SplitViewVisibility=AlwaysShowSplitHeader
+
 [TabBar]
+CloseTabOnMiddleMouseButton=true
 NewTabButton=true
 TabBarVisibility=AlwaysShowTabBar
 

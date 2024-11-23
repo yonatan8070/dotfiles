@@ -48,3 +48,4 @@ if type -q pipx
     set PATH $PATH /home/yonatan/.local/bin
 end
 
+set -x QT_LOGGING_RULES "kwin_*.debug=true"

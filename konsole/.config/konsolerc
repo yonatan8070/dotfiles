@@ -20,7 +20,6 @@ Places Icons Static Size=16
 
 [KonsoleWindow]
 FocusFollowsMouse=true
-RemoveWindowTitleBarAndFrame=true
 ShowWindowTitleOnTitleBar=true
 UseSingleInstance=true
 

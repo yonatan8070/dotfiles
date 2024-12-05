@@ -25,6 +25,10 @@ else
     set -x EDITOR hx
 end
 
+if command -q tailscale
+    tailscale completion fish | source
+end
+
 alias ip="ip -h"
 
 set fish_greeting (set_color C41202 --bold)">"(set_color normal) Welcome, operator. Using (fish --version | sed 's/, version//'). Good luck.

@@ -37,13 +37,22 @@ alias imgcat="wezterm imgcat"
 alias dcr="docker compose down && docker-compose up -d"
 alias miniterm="python3 -m serial.tools.miniterm -e"
 alias rm="rm -v"
-alias ls="exa"
-alias ll="exa -lah"
-alias tree="exa --tree"
 alias u="cd .."
 alias uu="cd ../.."
 alias uuu="cd ../../.."
 alias uuuu="cd ../../../.."
+
+if command -q exa
+    alias ls="exa"
+    alias ll="exa -lah"
+    alias tree="exa --tree"
+end
+
+if command -q eza
+    alias ls="eza"
+    alias ll="eza -lah"
+    alias tree="eza --tree"
+end
 
 . "$HOME/.config/fish/functions/prompt.fish"
 

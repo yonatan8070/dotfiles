@@ -9,6 +9,10 @@ if set -q XDG_SESSION_DESKTOP
     set -x XCURSOR_THEME Breeze_Snow
 end
 
+if test -d ~/.cargo/bin
+    fish_add_path ~/.cargo/bin
+end
+
 # I have no idea why this isn't done automatically but whatever
 set -x LC_ALL "en_US.UTF-8"
 

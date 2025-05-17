@@ -1,9 +1,7 @@
 function fish_prompt
     set exclude_cmd "bash|less|man|more|ssh|bat|helix|vim|hx|btop|fg"
-    if begin
-        test $CMD_DURATION -gt 1000
-        and echo $history[1] | grep -vqE "^($exclude_cmd).*"
-    end
+    if test $CMD_DURATION -gt 1000
+        and echo $history[1] | grep -vqE "^($exclude_cmd).*";
 
         # Show duration of the last command in seconds
         set duration (echo "$CMD_DURATION 1000" | awk '{printf "%.3f", $1 / $2}')

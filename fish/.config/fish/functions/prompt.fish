@@ -26,6 +26,4 @@ function fish_prompt
             history delete --exact --case-sensitive $history[1]
         end
     end
-
-    #set -U fish_history_merge_variable (math $fish_history_merge_variable + 1)
 end

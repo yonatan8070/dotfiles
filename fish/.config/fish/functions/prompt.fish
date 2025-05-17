@@ -21,8 +21,10 @@ function fish_prompt
     # Print the rest of the prompt
     printf '%s\n%s%s%s@%s%s%s%s > \n' "$PROMPT_PWD" (set_color $fish_color_user) $USER (set_color normal) $hostname (fish_git_prompt)
 
-    if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)|(^clear)";
-        history delete --exact --case-sensitive $history[1]
+    if test (echo $FISH_VERSION | string split . -f 1) -lt 4;
+        if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)|(^clear)";
+            history delete --exact --case-sensitive $history[1]
+        end
     end
 
     #set -U fish_history_merge_variable (math $fish_history_merge_variable + 1)

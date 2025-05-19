@@ -1,8 +1,3 @@
-function merge_history --on-variable fish_history_merge_variable
-    # history merge
-end
-
-
 if set -q XDG_SESSION_DESKTOP
     set -x _JAVA_AWT_WM_NONREPARENTING 1 # Used to make Java apps work properly under Wayland
     set -x MOZ_ENABLE_WAYLAND 1 # Enables Wayland for Firefox
@@ -11,6 +6,10 @@ end
 
 if test -d "$HOME/.local/opt/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/"
     fish_add_path "$HOME/.local/opt/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/"
+end
+
+if test -d ~/.cargo/bin
+    fish_add_path ~/.cargo/bin
 end
 
 # I have no idea why this isn't done automatically but whatever
@@ -65,3 +64,4 @@ set PATH $PATH /home/yonatan/.local/bin
 if command -q zoxide
     zoxide init fish --cmd cd | source
 end
+

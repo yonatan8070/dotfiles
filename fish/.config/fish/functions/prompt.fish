@@ -1,9 +1,7 @@
 function fish_prompt
     set exclude_cmd "bash|less|man|more|ssh|bat|helix|vim|hx|btop|fg"
-    if begin
-        test $CMD_DURATION -gt 1000
-        and echo $history[1] | grep -vqE "^($exclude_cmd).*"
-    end
+    if test $CMD_DURATION -gt 1000
+        and echo $history[1] | grep -vqE "^($exclude_cmd).*";
 
         # Show duration of the last command in seconds
         set duration (echo "$CMD_DURATION 1000" | awk '{printf "%.3f", $1 / $2}')
@@ -23,9 +21,9 @@ function fish_prompt
     # Print the rest of the prompt
     printf '%s\n%s%s%s@%s%s%s%s > \n' "$PROMPT_PWD" (set_color $fish_color_user) $USER (set_color normal) $hostname (fish_git_prompt)
 
-    if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)|(^clear)";
-        history delete --exact --case-sensitive $history[1]
+    if test (echo $FISH_VERSION | string split . -f 1) -lt 4;
+        if echo $history[1] | grep -Eq "(^sudo rm)|(^rm)|(^clear)";
+            history delete --exact --case-sensitive $history[1]
+        end
     end
-
-    #set -U fish_history_merge_variable (math $fish_history_merge_variable + 1)
 end

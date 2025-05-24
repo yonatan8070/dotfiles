@@ -12,6 +12,10 @@ if test -d ~/.cargo/bin
     fish_add_path ~/.cargo/bin
 end
 
+if test -d /home/yonatan/.local/bin
+    fish_add_path /home/yonatan/.local/bin
+end
+
 # I have no idea why this isn't done automatically but whatever
 set -x LC_ALL "en_US.UTF-8"
 
@@ -59,7 +63,6 @@ end
 
 . "$HOME/.config/fish/functions/prompt.fish"
 
-set PATH $PATH /home/yonatan/.local/bin
 
 if command -q zoxide
     zoxide init fish --cmd cd | source

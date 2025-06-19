@@ -1,3 +1,5 @@
+# https://github.com/bgreenwell/lstr
+
 function cdt --wraps lstr
     if command -q lstr
         set selected_dir (lstr interactive -gGa --icons)

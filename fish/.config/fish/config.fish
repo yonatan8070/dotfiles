@@ -12,8 +12,8 @@ if test -d ~/.cargo/bin
     fish_add_path ~/.cargo/bin
 end
 
-if test -d /home/yonatan/.local/bin
-    fish_add_path /home/yonatan/.local/bin
+if test -d $HOME/.local/bin
+    fish_add_path $HOME/.local/bin
 end
 
 # I have no idea why this isn't done automatically but whatever

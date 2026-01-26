@@ -68,3 +68,6 @@ if command -q zoxide
     zoxide init fish --cmd cd | source
 end
 
+if test (echo $FISH_VERSION | string split . -f 1) -ge 4;
+    bind alt-backspace backward-kill-word
+end

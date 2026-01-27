@@ -7,7 +7,7 @@ This is a small set of configurations I like to keep backed up, this is what I u
 Clone the repo _into your home directory_ (might be able to put it somewhere else, check the `stow` manual if you'd like to do that)
 
 ```fish
-rm -rf ~/.config/fish ~/.config/helix && stow fish helix
+rm -rf ~/.config/fish ~/.config/helix && stow fish helix xcompose
 ```
 
 The `rm` command is specifically written on the same line as `stow`, otherwise Fish will rewrite the config files before you can stow the new ones.

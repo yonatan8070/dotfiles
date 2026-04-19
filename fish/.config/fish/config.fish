@@ -51,13 +51,13 @@ alias uuuu="cd ../../../.."
 
 if command -q exa
     alias ls="exa"
-    alias ll="exa -lah"
+    alias ll="exa -lahg"
     alias tree="exa --tree"
 end
 
 if command -q eza
     alias ls="eza"
-    alias ll="eza -lah"
+    alias ll="eza -lahg"
     alias tree="eza --tree"
 end
 

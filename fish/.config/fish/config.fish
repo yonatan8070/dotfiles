@@ -26,10 +26,10 @@ set -x LC_ALL "en_US.UTF-8"
 # set -x LESSOPEN "|lesspipe.sh %s"
 
 if command -q helix
-    set -x EDITOR helix
+    set -x EDITOR (which helix)
     alias hx="helix"
 else
-    set -x EDITOR hx
+    set -x EDITOR (which hx)
 end
 
 if command -q tailscale

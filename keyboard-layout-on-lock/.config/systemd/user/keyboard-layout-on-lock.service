@@ -1,0 +1,10 @@
+[Unit]
+Description=Set KDE keyboard layout to 0 on screen lock
+
+[Service]
+ExecStart=%h/.local/bin/keyboard-layout-on-lock.sh
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=default.target

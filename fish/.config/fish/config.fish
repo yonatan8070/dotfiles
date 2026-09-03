@@ -16,6 +16,10 @@ if test -d $HOME/.local/bin
     fish_add_path $HOME/.local/bin
 end
 
+if test -d $HOME/.nix-profile/bin
+    fish_add_path $HOME/.nix-profile/bin
+end
+
 # I have no idea why this isn't done automatically but whatever
 set -x LC_ALL "en_US.UTF-8"
 

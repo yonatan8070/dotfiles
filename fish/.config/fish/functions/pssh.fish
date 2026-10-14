@@ -28,7 +28,15 @@ function pssh --description "Ping host until reachable, then ssh" --wraps ssh
         return 1
     end
 
-    set -l host (ssh -G "$dest" 2>/dev/null | awk '$1 == "hostname" { print $2; exit }')
+    set -l config (command ssh -G $argv 2>/dev/null)
+
+    if test -z "$config"
+        echo "Could not resolve SSH configuration for '$dest'"
+        return 1
+    end
+
+    set -l host (string match -r '^hostname .*' -- $config | string replace 'hostname ' '')
+    set -l proxyjump (string match -r '^proxyjump .*' -- $config | string replace 'proxyjump ' '')
 
     if test -z "$host"
         echo "Could not resolve hostname for '$dest'"
@@ -37,8 +45,19 @@ function pssh --description "Ping host until reachable, then ssh" --wraps ssh
 
     echo "Waiting for $host..."
 
-    while not ping -c 1 -W 1 "$host" >/dev/null 2>&1
-        sleep 1
+    if test "$proxyjump" != "none" -a -n "$proxyjump"
+        while not command ssh -o BatchMode=yes \
+                -o ConnectTimeout=3 \
+                -o ConnectionAttempts=1 \
+                -o StrictHostKeyChecking=yes \
+                -o NumberOfPasswordPrompts=0 \
+                $argv true >/dev/null 2>&1
+            sleep 1
+        end
+    else
+        while not ping -c 1 -W 1 "$host" >/dev/null 2>&1
+            sleep 1
+        end
     end
 
     echo "$host is reachable, connecting..."

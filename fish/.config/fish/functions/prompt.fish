@@ -1,7 +1,7 @@
 function fish_prompt
     set -l last_pipestatus $pipestatus
     set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
-    set -l normal (set_color --reset)
+    set -l normal (set_color normal)
 
     set exclude_cmd "bash|less|man|more|ssh|bat|helix|vim|hx|btop|fg"
     if test $CMD_DURATION -gt 1000

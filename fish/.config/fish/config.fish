@@ -67,6 +67,19 @@ end
 
 . "$HOME/.config/fish/functions/prompt.fish"
 
+# Refresh the prompt when SIGUSR1 arrives
+function __refresh_prompt --on-signal SIGUSR1
+    commandline -f repaint
+end
+
+# Update once per second while fish is running so the clock is up-to-date
+if status is-interactive
+    fish -c 'while kill -0 $argv[1] 2>/dev/null
+        sleep 1
+        kill -s USR1 $argv[1] 2>/dev/null
+    end' $fish_pid &
+    disown
+end
 
 if command -q zoxide
     zoxide init fish --cmd cd | source

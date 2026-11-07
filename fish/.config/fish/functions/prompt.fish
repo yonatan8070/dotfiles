@@ -1,3 +1,7 @@
+function __reset_command_notification --on-event fish_preexec
+    set -eg __command_notification_sent
+end
+
 function fish_prompt
     set -l last_pipestatus $pipestatus
     set -lx __fish_last_status $status # Export for __fish_print_pipestatus.
@@ -14,7 +18,9 @@ function fish_prompt
 
         # Send a notification if the command took longer than 30 seconds in case I'm looking at something else
         if test $CMD_DURATION -gt 30000
+            and not set -q __command_notification_sent
             if type -q notify-send
+                set -g __command_notification_sent 1
                 notify-send -u normal -a "Fish" "Command $(echo $history[1] | cut -d " " -f1) finished in $(echo $duration)s"
             end
         end
